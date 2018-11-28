@@ -24,13 +24,13 @@ class App extends Component {
     ]
   }
   handleSubmit = (event)=>{
-    event.preventDefault();
-    console.log('handling submit');
-    let newMonster = this.state.newMonster;
+    event.preventDefault(); // stop reloading DOC when submit
+    // console.log('handling submit');
+    let newMonster = this.state.newMonster; // get values from inside state.newMonster which is change from input
 
-    this.setState({
+    this.setState({ // add the inputs into monsterList array
       monsterList: [
-        ...this.state.monsterList,
+        ...this.state.monsterList, // spread
         newMonster
       ]
     })
