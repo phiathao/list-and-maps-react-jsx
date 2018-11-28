@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import Header from './../Header/Header.jsx'
+import MonsterForm from './../MonsterForm/MonsterForm.jsx'
 
 class App extends Component {
   state = {
-    newMonster : {
-      name : '',
-      rate : 0
-    },
     monsterList: [
       {
         name: 'Mike Rozdowski',
@@ -74,12 +72,9 @@ class App extends Component {
     // returning a new array, not changing existing array
     return (
       <div>
+        <Header />
         <p>Lets get a list on the DOM</p>
-        <form onSubmit={this.handleSubmit}>
-        <input type='text' value={this.state.newMonster.name} placeholder='Monster Name' onChange={this.handleNameChange} />
-        <input type='number' value={this.state.newMonster.rate} placeholder='Scariness Rating' onChange={this.handleRateChange}/>
-        <input type="submit"/>
-        </form>
+        <MonsterForm />
         {/* if there is only this.state.monsterList it will shove all of them together */}
         {/* {this.state.monsterList} */}
         {/* {JSON.stringify(this.state.monsterList)}  */}
