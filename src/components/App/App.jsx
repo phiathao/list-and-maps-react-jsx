@@ -7,10 +7,18 @@ class App extends Component {
     monsterList : ['Mike Rozdowski', 'werewolf', 'Count Chocula']
   }
   render() {
-    let listItemHtml = [];
-    for (let i =0; i<this.state.monsterList.length; i++){
-      listItemHtml.push(<li>{this.state.monsterList[i]}</li>);
-    }
+    // let listItemHtml = [];
+    // for (let i =0; i<this.state.monsterList.length; i++){
+    //   listItemHtml.push(<li>{this.state.monsterList[i]}</li>);
+    // }
+    // this.state.monsterList.forEach( function (monster){
+    //   listItemHtml.push(<li>{monster}</li>);
+    // });
+    // let listItemHtml = this.state.monsterList.map(function(monster){
+    //   return <li>{monster}</li>
+    // });
+    let listItemHtml = this.state.monsterList.map(monster => <li>{monster}</li>);
+    // returning a new array, not changing existing array
     return (
       <div>
         <p>Lets get a list on the DOM</p>
