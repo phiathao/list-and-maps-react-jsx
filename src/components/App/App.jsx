@@ -28,7 +28,6 @@ class App extends Component {
   }
   handleSubmit = (event)=>{
     event.preventDefault(); // stop reloading DOC when submit
-    // console.log('handling submit');
     let newMonster = this.state.newMonster; // get values from inside state.newMonster which is change from input
 
     this.setState({ // add the inputs into monsterList array
@@ -79,7 +78,7 @@ class App extends Component {
       <div>
         <Header />
         <p>Lets get a list on the DOM</p>
-        <MonsterForm newMonster={this.state.newMonster}/>
+        <MonsterForm newMonster={this.state.newMonster} monsterList={this.state.monsterList} handleNameChange={this.handleNameChange} handleRateChange={this.handleRateChange} handleSubmit={this.handleSubmit}/>
 
         {/* if there is only this.state.monsterList it will shove all of them together */}
         {/* {this.state.monsterList} */}
@@ -90,7 +89,7 @@ class App extends Component {
         <pre>
           <p>{this.state.newMonster.name} scariness rating is {this.state.newMonster.rate}</p>
           {JSON.stringify(this.state.newMonster)}
-          
+
           <MonsterList taco={1} monsterList={this.state.monsterList}/>
 
           {/* {listItemHtml} // removed from App.jsx */}
