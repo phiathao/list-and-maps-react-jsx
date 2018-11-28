@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   state = {
-    monsterList : ['Mike Rozdowski', 'werewolf', 'Count Chocula']
+    monsterList: [
+      {
+        name: 'Mike Rozdowski',
+        rate: 3
+      },
+      {
+        name: 'werewolf',
+        rate: 5
+      },
+      {
+        name: 'Count Chocula',
+        rate: 2
+      }
+    ]
   }
   render() {
     // let listItemHtml = [];
@@ -14,10 +27,11 @@ class App extends Component {
     // this.state.monsterList.forEach( function (monster){
     //   listItemHtml.push(<li>{monster}</li>);
     // });
-    // let listItemHtml = this.state.monsterList.map(function(monster){
+    // let listItemHtml = this.state.monsterList.map(function(monster){ 
     //   return <li>{monster}</li>
     // });
-    let listItemHtml = this.state.monsterList.map(monster => <li>{monster}</li>);
+    let listItemHtml = this.state.monsterList.map((monster, i) => <li key={i}>{monster.name} scariness rating {monster.rate}</li>);
+    // map second property that can be access = i
     // returning a new array, not changing existing array
     return (
       <div>
